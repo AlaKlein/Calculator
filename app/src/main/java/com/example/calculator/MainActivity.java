@@ -123,9 +123,14 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     value2 = Double.parseDouble(edValor2.getText().toString());
                 }
-                result = value1 / value2;
+                if (value1 == 0 || value2 == 0) {
+                    edResult.setText("Impossible");
+                }else {
 
-                edResult.setText(String.valueOf(result));
+                    result = value1 / value2;
+
+                    edResult.setText(String.valueOf(result));
+                }
             }
         });
     }
